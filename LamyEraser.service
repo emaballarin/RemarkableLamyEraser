@@ -1,5 +1,5 @@
 [Unit]
-Description=Lamy Pen Button as Eraser
+Description=Use Lamy EMR styli button(s) as an eraser... and much more
 After=xochitl.service
 
 [Service]

@@ -6,17 +6,17 @@ cd ~
 systemctl stop LamyEraser.service
 systemctl disable LamyEraser.service > /dev/null/
 
-echo "Downloading RemarkableLamyEraser Executable..."
+echo "Downloading RemarkableLamyEraser executable..."
 cd /usr/sbin
 rm -f RemarkableLamyEraser
-wget https://github.com/isaacwisdom/RemarkableLamyEraser/raw/v2/RemarkableLamyEraser
-echo "Adding execute privleges..."
+wget https://github.com/emaballarin/RemarkableLamyEraser/raw/v2/RemarkableLamyEraser
+echo "Adding execution privleges..."
 chmod +x RemarkableLamyEraser
 cd ~
 
 echo "Downloading configuration file.."
 rm -f LamyEraser.conf
-wget https://github.com/isaacwisdom/RemarkableLamyEraser/raw/v2/LamyEraser.conf
+wget https://github.com/emaballarin/RemarkableLamyEraser/raw/v2/LamyEraser.conf
 
 echo "Creating directory for configuration file..."
 mkdir -p ~/.config/LamyEraser
@@ -44,7 +44,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
  then
   echo "Downloading service file..."
   rm -f LamyEraser.service
-  wget https://github.com/isaacwisdom/RemarkableLamyEraser/raw/v2/LamyEraser.service
+  wget https://github.com/emaballarin/RemarkableLamyEraser/raw/v2/LamyEraser.service
   echo "Placing service file in /lib/systemd/system/"
   mv LamyEraser.service /lib/systemd/system/
   echo "Setting up RemarkableLamyEraser to start on boot..."
@@ -53,6 +53,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]
   echo "Starting RemarkableLamyEraser. Enjoy!"
   systemctl start LamyEraser.service
 else
-  echo "You can start RemarkableLamyEraser at any time by running /home/root/RemarkableLamyEraser"
+  echo "You can start RemarkableLamyEraser at any time by running /usr/sbin/RemarkableLamyEraser"
   echo "Enjoy!"
 fi

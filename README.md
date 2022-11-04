@@ -1,18 +1,18 @@
 # RemarkableLamyEraser
-Standalone tool that turns the button on the Lamy Pen into an eraser on the reMarkable.
+Standalone tool that turns the button on the Lamy Pen into an eraser on the reMarkable. And much more!
 
 Also confirmed to work with these other styli:
  * Samsung S6 S Pen
  * Wacom One Pen CP91300B2Z
 
-The tool will definitely break when the reMarkable updates. When that happens, just reinstall!
+The tool will definitely break when the reMarkable updates. When that happens, just reinstall it!
 # Install Instructions
 ```shell
-cd; wget https://github.com/isaacwisdom/RemarkableLamyEraser/raw/v2/LamyInstall.sh; chmod +x LamyInstall.sh; ./LamyInstall.sh; rm ~/LamyInstall.sh
+cd; wget https://github.com/emaballarin/RemarkableLamyEraser/raw/v2/LamyInstall.sh; chmod +x LamyInstall.sh; ./LamyInstall.sh; rm ~/LamyInstall.sh
 ```
 # Uninstall Instrucions
 ```shell
-cd; wget https://github.com/isaacwisdom/RemarkableLamyEraser/raw/v2/LamyUninstall.sh; chmod +x LamyUninstall.sh; ./LamyUninstall.sh; rm ~/LamyUninstall.sh
+cd; wget https://github.com/emaballarin/RemarkableLamyEraser/raw/v2/LamyUninstall.sh; chmod +x LamyUninstall.sh; ./LamyUninstall.sh; rm ~/LamyUninstall.sh
 ```
 
 
@@ -54,6 +54,3 @@ After making changes to the config, run these command to restart the program:
 ``` Shell
 systemctl restart LamyEraser.service
 ```
-
-# TODO:
-- [ ] toltec package
