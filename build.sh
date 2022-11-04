@@ -5,6 +5,7 @@ rm -R -f ./build
 rm -f RemarkableLamyEraser
 
 # Source toolchain (adapt if different!)
+unset LD_LIBRARY_PATH
 . /opt/codex/rm11x/3.1.68/environment-setup-cortexa7hf-neon-remarkable-linux-gnueabi
 
 # Create build directory (QT Creator does that automatically)
@@ -18,6 +19,7 @@ qmake ../RemarkableLamyEraser.pro
 make -j$(($(nproc --all)/2))
 
 # Copy artifact(s)
+mv RemarkableLamyEraser ../
 chmod +x ../RemarkableLamyEraser
 
 # Cleanup
