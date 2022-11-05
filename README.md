@@ -8,11 +8,11 @@ Also confirmed to work with these other styli:
 The tool will definitely break when the reMarkable updates. When that happens, just reinstall!
 # Install Instructions
 ```shell
-cd; wget https://github.com/isaacwisdom/RemarkableLamyEraser/raw/v1/LamyInstall.sh; chmod +x LamyInstall.sh; ./LamyInstall.sh; rm ~/LamyInstall.sh;
+cd; wget https://github.com/emaballarin/RemarkableLamyEraser/raw/v1/LamyInstall.sh; chmod +x LamyInstall.sh; ./LamyInstall.sh; rm ~/LamyInstall.sh;
 ```
 # Uninstall Instrucions
 ```shell
-cd; wget https://github.com/isaacwisdom/RemarkableLamyEraser/raw/v1/LamyUninstall.sh; chmod +x LamyUninstall.sh; ./LamyUninstall.sh; rm ~/LamyUninstall.sh;
+cd; wget https://github.com/emaballarin/RemarkableLamyEraser/raw/v1/LamyUninstall.sh; chmod +x LamyUninstall.sh; ./LamyUninstall.sh; rm ~/LamyUninstall.sh;
 ```
 
 
@@ -29,7 +29,6 @@ The supported arguments are:
 For example, this line would use the toggle mode and redo on a double click:  
 `ExecStart=RemarkableLamyEraser --toggle --double-press redo`
 
-
 To apply your config, run these commands:
 ``` Shell
 systemctl stop LamyEraser.service
@@ -37,25 +36,7 @@ systemctl daemon-reload
 systemctl start LamyEraser.service
 ```
 
+
 # How it works
 When you press the button on the Lamy Pen, an input event with code BTN_TOOL_RUBBER is sent into dev/input/event1. Essentially, this tricks the reMarkable into
 thinking you are using the eraser side of the Marker Plus.
-
-# How to build
-
-* Download the latest toolchain for your device from <https://remarkablewiki.com/devel/toolchain> (e.g. `codex-x86_64-cortexa9hf-neon-rm10x-toolchain-3.1.15.sh`)
-* run that file to install the toolchain (e.g. `sudo sh codex-x86_64-cortexa9hf-neon-rm10x-toolchain-3.1.15.sh`)
-* source the printed environment file (e.g. `source /opt/codex/rm11x/3.1.15/environment-setup-cortexa7hf-neon-remarkable-linux-gnueabi`)
-* compile `main.c` using the `CC` environment variable (e.g. `$CC -O2 main.c`)
-    * if there is an error like `no such file or directory`, copy the command and execute it directly instead of using `$CC`, e.g. `arm-remarkable-linux-gnueabi-gcc  -mfpu=neon -mfloat-abi=hard -mcpu=cortex-a7 --sysroot=/opt/codex/rm11x/3.1.15/sysroots/cortexa7hf-neon-remarkable-linux-gnueabi -O2 main.c`)
-
-# TODO:
-- [ ] RM1 support (testers needed)
-- [ ] Nice install script
-- [ ] toltec package
-- [ ] config file (as opposed to current command line argument system)
-- [ ] expand "How it works" section.
-- [ ] flexible triggers (such as "click", "press and hold", "double click", "double click and hold", etc.)
-- [ ] freely assignable actions (as listed below, able to assign to any trigger above) *(these last two will require
-      some significant code restructuring)*
-

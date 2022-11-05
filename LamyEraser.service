@@ -1,0 +1,12 @@
+[Unit]
+Description=Use Lamy EMR styli button(s) as an eraser
+After=xochitl.service
+
+[Service]
+# configure by adding arguments to the line below. supported arguments are: --press, --toggle, --double-press undo, --double-press redo, --left-handed
+# running the command with no arguments is equivalent to using: --press --double-press undo
+ExecStart=/usr/sbin/RemarkableLamyEraser --press --double-press undo
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
